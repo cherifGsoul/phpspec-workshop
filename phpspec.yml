@@ -1,0 +1,5 @@
+suites:
+    todo:
+      namespace: Cherif\Todolist
+      psr4_prefix: Cherif\Todolist
+      src_path: ./src

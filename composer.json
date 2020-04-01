@@ -1,0 +1,21 @@
+{
+    "name": "cherif/todolist",
+    "authors": [
+        {
+            "name": "Cherif BOUCHELAGHEM",
+            "email": "cherif.bouchelaghem@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Cherif\\Todolist\\": "src/"
+        }
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^6.1"
+    }
+}
