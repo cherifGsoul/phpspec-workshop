@@ -42,4 +42,12 @@ class Todo
     {
         return $this->name;
     }
+
+    /**
+     * Get the value of owner
+     */ 
+    public function getOwner()
+    {
+        return $this->owner;
+    }
 }
