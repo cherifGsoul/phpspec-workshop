@@ -1,3 +1,6 @@
+## What is PHPSpec ?
+[PHPSpec](http://www.phpspec.net/) is a php toolset to drive emergent design by specification.
+
 ## PhpSpec workshop:
 
 This is the source for the workshop teaching how to use PHPSpec to implement [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
