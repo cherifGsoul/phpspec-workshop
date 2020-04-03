@@ -24,23 +24,23 @@ anything at all about the interfaces to the outside world.
 
 The application of the workshop is a todo-list with the following rules:
 
-- Todo has a name and an owner
-- Todo should he open by default
-- Todo can be marked as done
-- Todo can only be marked as done by its owner
-- Todo can only be marked as done when it is opened
-- Todo can be reopend
-- Todo can only be reopened by its owner
-- Todo can only be reopened if it is maked as done
-- Todo can have a deadline
-- Todo can have a reminder
-- Todo dedaline can only be added by the todo owner
-- Todo reminder can only be added by the todo owner 
+- **Todo** has a name and an owner
+- **Todo** should be opened by default
+- **Todo** can be marked as done
+- **Todo** can only be marked as done by its owner
+- **Todo** can only be marked as done when it is opened
+- **Todo** can be reopend
+- **Todo** can only be reopened by its owner
+- **Todo** can only be reopened if it is maked as done
+- **Todo** can have a deadline
+- **Todo** can have a reminder
+- **Todo** dedaline can only be added by the todo owner
+- **Todo** reminder can only be added by the todo owner 
 
 Based on those rules the following use cases had been identified:
-- Add todo (done on April 1st, 2020)
-- Mark todo as done (done on April 1st, 2020)
-- Reopen a todo
+- Add **Todo** (done on April 1st, 2020)
+- Mark **Todo** as done (done on April 1st, 2020)
+- Reopen a **Todo**
 - Add deadline
 - Add reminder
 
