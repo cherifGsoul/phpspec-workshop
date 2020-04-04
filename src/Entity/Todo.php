@@ -1,11 +1,14 @@
 <?php
 
-namespace Cherif\Todolist\Entity;
+namespace Cherif\Todo\Entity;
+
+use DomainException;
 
 class Todo
 {
     private $name;
     private $owner;
+    private $done;
 
     private function __construct(string $name, string $owner)
     {
@@ -16,23 +19,15 @@ class Todo
     public static function add(string $name, string $owner): Todo
     {
         $todo = new Todo($name, $owner);
-        $todo->open = true;
+
+        $todo->done = false;
+
         return $todo;
     }
 
-    public function isOpen(): bool
+    public function isOpen()
     {
-        return $this->open;
-    }
-
-    public function markAsDone()
-    {
-        $this->open = false;
-    }
-
-    public function isDone()
-    {
-        return !$this->isOpen();
+        return !$this->done;
     }
 
     /**
@@ -49,5 +44,36 @@ class Todo
     public function getOwner()
     {
         return $this->owner;
+    }
+
+    public function markAsDone(string $owner)
+    {
+        if ($owner != $this->owner) {
+            throw new DomainException('Only todo owner can mark it as done!');
+        }
+
+        if ($this->done) {
+            throw new DomainException('The todo is already marked as done!');
+        }
+
+        $this->done = true;
+    }
+
+    public function isDone()
+    {
+        return $this->done;
+    }
+
+    public function reopen(string $owner)
+    {
+        if ($owner != $this->owner) {
+            throw new DomainException('Only todo owner can reopen it!');
+        }
+
+        if ($this->isOpen()) {
+            throw new DomainException('You can only reopen a marked as done todo');
+        }
+        
+        $this->done = false;
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Cherif\Todolist\UseCase\Data;
+namespace Cherif\Todo\UseCase\Data;
 
 class AddTodoInput
 {
@@ -12,6 +12,7 @@ class AddTodoInput
 		$this->name = $name;
 		$this->owner = $owner;
 	}
+
 
 	/**
 	 * Get the value of name

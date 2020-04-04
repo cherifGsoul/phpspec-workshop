@@ -1,11 +1,11 @@
 <?php
 
-namespace Cherif\Todolist\Entity;
+namespace Cherif\Todo\Entity;
 
 interface TodoList
 {
 
-    public function save(Todo $todo);
+    public function save($argument1);
 
-    public function getTodoByName($argument1);
+    public function getForName($argument1);
 }

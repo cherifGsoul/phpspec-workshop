@@ -3,26 +3,26 @@
 namespace Cherif\Todo\UseCase\Interactor;
 
 use Cherif\Todo\Entity\TodoList;
-use Cherif\Todo\UseCase\Data\MarkTodoAsDoneInput;
-use Cherif\Todo\UseCase\Data\MarkTodoAsDoneOutput;
+use Cherif\Todo\UseCase\Data\ReopenTodoInput;
+use Cherif\Todo\UseCase\Data\ReopenTodoOutput;
 use InvalidArgumentException;
 
-class MarkTodoAsDoneInteractor
+class ReopenTodoInteractor
 {
-    private $todoList; 
+    private $todoList;
 
     public function __construct(TodoList $todoList)
     {
         $this->todoList = $todoList;
     }
 
-    public function handle(MarkTodoAsDoneInput $input)
+    public function handle(ReopenTodoInput $input): ReopenTodoOutput
     {
         $todo = $this->todoList->getForName($input->getName());
         try {
-            $todo->markAsDone($input->getOwner());
+            $todo->reopen($input->getOwner());
             $this->todoList->save($todo);
-            return new MarkTodoAsDoneOutput($todo->getName(), $todo->getOwner());
+            return new ReopenTodoOutput($todo->getName(), $todo->getOwner());
         } catch (\Throwable $th) {
             throw new InvalidArgumentException($th->getMessage());
         }

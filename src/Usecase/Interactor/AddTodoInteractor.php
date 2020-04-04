@@ -1,11 +1,11 @@
 <?php
 
-namespace Cherif\Todolist\UseCase\Interactor;
+namespace Cherif\Todo\UseCase\Interactor;
 
-use Cherif\Todolist\Entity\Todo;
-use Cherif\Todolist\Entity\TodoList;
-use Cherif\Todolist\UseCase\Data\AddTodoInput;
-use Cherif\Todolist\UseCase\Data\AddTodoOutput;
+use Cherif\Todo\Entity\Todo;
+use Cherif\Todo\Entity\TodoList;
+use Cherif\Todo\UseCase\Data\AddTodoInput;
+use Cherif\Todo\UseCase\Data\AddTodoOutput;
 
 class AddTodoInteractor
 {
@@ -15,7 +15,8 @@ class AddTodoInteractor
     {
         $this->todoList = $todoList;
     }
-    public function __invoke(AddTodoInput $input): AddTodoOutput
+
+    public function handle(AddTodoInput $input)
     {
         $todo = Todo::add($input->getName(), $input->getOwner());
         $this->todoList->save($todo);
