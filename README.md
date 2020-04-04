@@ -38,8 +38,8 @@ The application of the workshop is a todo-list with the following rules:
 - Todo reminder can only be added by the todo owner 
 
 Based on those rules the following use cases had been identified:
-- Add todo (done on April 1st, 2020)
-- Mark todo as done (done on April 1st, 2020)
+- Add todo
+- Mark todo as done
 - Reopen a todo
 - Add deadline
 - Add reminder
