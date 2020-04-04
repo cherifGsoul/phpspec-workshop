@@ -1,10 +1,10 @@
 <?php
 
-namespace Cherif\Todolist\Usecase;
+namespace Cherif\Todolist\UseCase\Interactor;
 
-use Cherif\Todolist\Domain\Model\TodoList;
-use Cherif\Todolist\Usecase\Data\MarkTodoAsDoneInput;
-use Cherif\Todolist\Usecase\Data\MarkTodoAsDoneOutput;
+use Cherif\Todolist\Entity\TodoList;
+use Cherif\Todolist\UseCase\Data\MarkTodoAsDoneInput;
+use Cherif\Todolist\UseCase\Data\MarkTodoAsDoneOutput;
 
 class MarkTodoAsDoneInteractor
 {

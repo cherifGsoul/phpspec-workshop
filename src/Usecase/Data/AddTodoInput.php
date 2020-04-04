@@ -1,6 +1,6 @@
 <?php
 
-namespace Cherif\Todolist\Usecase\Data;
+namespace Cherif\Todolist\UseCase\Data;
 
 class AddTodoInput
 {

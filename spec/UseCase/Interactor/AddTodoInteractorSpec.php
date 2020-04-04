@@ -1,12 +1,12 @@
 <?php
 
-namespace spec\Cherif\Todolist\Usecase;
+namespace spec\Cherif\Todolist\UseCase\Interactor;
 
-use Cherif\Todolist\Usecase\AddTodoInteractor;
-use Cherif\Todolist\Usecase\Data\AddTodoInput;
-use Cherif\Todolist\Usecase\Data\AddTodoOutput;
-use Cherif\Todolist\Domain\Model\TodoList;
-use Cherif\Todolist\Domain\Model\Todo;
+use Cherif\Todolist\UseCase\Interactor\AddTodoInteractor;
+use Cherif\Todolist\UseCase\Data\AddTodoInput;
+use Cherif\Todolist\UseCase\Data\AddTodoOutput;
+use Cherif\Todolist\Entity\TodoList;
+use Cherif\Todolist\Entity\Todo;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 

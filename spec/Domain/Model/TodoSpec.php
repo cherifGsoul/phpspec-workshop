@@ -1,8 +1,8 @@
 <?php
 
-namespace spec\Cherif\Todolist\Domain\Model;
+namespace spec\Cherif\Todolist\Entity;
 
-use Cherif\Todolist\Domain\Model\Todo;
+use Cherif\Todolist\Entity\Todo;
 use PhpSpec\ObjectBehavior;
 
 class TodoSpec extends ObjectBehavior

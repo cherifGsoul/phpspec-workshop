@@ -1,6 +1,6 @@
 <?php
 
-namespace Cherif\Todolist\Domain\Model;
+namespace Cherif\Todolist\Entity;
 
 class Todo
 {
