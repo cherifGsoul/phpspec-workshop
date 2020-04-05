@@ -2,6 +2,9 @@
 
 namespace Cherif\Todo\Entity;
 
+use DateTimeImmutable;
+use DateTimeInterface;
+use DateTimeZone;
 use DomainException;
 
 class Todo
@@ -9,13 +12,21 @@ class Todo
     private $name;
     private $owner;
     private $done;
+    private $deadline;
+    private $reminder;
 
+    /**
+     * 
+     */
     private function __construct(string $name, string $owner)
     {
         $this->name = $name;
         $this->owner = $owner;
     }
 
+    /**
+     * 
+     */
     public static function add(string $name, string $owner): Todo
     {
         $todo = new Todo($name, $owner);
@@ -25,6 +36,9 @@ class Todo
         return $todo;
     }
 
+    /**
+     * 
+     */
     public function isOpen()
     {
         return !$this->done;
@@ -46,6 +60,9 @@ class Todo
         return $this->owner;
     }
 
+    /**
+     * 
+     */
     public function markAsDone(string $owner)
     {
         if ($owner != $this->owner) {
@@ -59,11 +76,17 @@ class Todo
         $this->done = true;
     }
 
+    /**
+     * 
+     */
     public function isDone()
     {
         return $this->done;
     }
 
+    /**
+     * 
+     */
     public function reopen(string $owner)
     {
         if ($owner != $this->owner) {
@@ -75,5 +98,65 @@ class Todo
         }
         
         $this->done = false;
+    }
+
+    /**
+     * 
+     */
+    public function addDeadline(DateTimeImmutable $deadline, string $owner)
+    {
+        if ($owner != $this->owner) {
+            throw new DomainException('Only todo owner can add deadline');
+        }
+        
+        
+        if ($deadline <= new DateTimeImmutable()) {
+            throw new DomainException('Todo deadline must be in the futur!');
+        }
+        
+        $this->deadline = $deadline;
+    }
+
+    public function hasDeadline(): bool
+    {
+        return $this->deadline instanceof DateTimeImmutable;
+    }
+
+    /**
+     * Get the value of deadline
+     */ 
+    public function getDeadline()
+    {
+        return $this->deadline;
+    }
+
+    public function addReminder(DateTimeImmutable $reminder, string $owner)
+    {
+        if ($owner != $this->owner) {
+            throw new DomainException('Only todo owner can add reminder');
+        }
+
+        if ($reminder <= new DateTimeImmutable()) {
+            throw new DomainException('Todo reminder must be in the futur!');
+        }
+        //var_dump($this->hasDeadline);
+        if (!$this->hasDeadline()) {
+            throw new DomainException('Todo with deadline only can have a reminder!');
+        }
+
+        $this->reminder = $reminder;
+    }
+
+    public function hasReminder()
+    {
+        return $this->reminder instanceof DateTimeImmutable;
+    }
+
+    /**
+     * Get the value of reminder
+     */ 
+    public function getReminder()
+    {
+        return $this->reminder;
     }
 }
