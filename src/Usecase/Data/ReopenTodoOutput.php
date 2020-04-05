@@ -2,7 +2,7 @@
 
 namespace Cherif\Todo\UseCase\Data;
 
-class MarkTodoAsDoneOutput
+class ReopenTodoOutput
 {
 	private $name;
 	private $owner;

@@ -1,3 +1,6 @@
+## What is PHPSpec ?
+[PHPSpec](http://www.phpspec.net/) is a php toolset to drive emergent design by specification.
+
 ## PhpSpec workshop:
 
 This is the source for the workshop teaching how to use PHPSpec to implement [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
@@ -38,9 +41,9 @@ The application of the workshop is a todo-list with the following rules:
 - **Todo** reminder can only be added by the todo owner 
 
 Based on those rules the following use cases had been identified:
-- Add **Todo** (done on April 1st, 2020)
-- Mark **Todo** as done (done on April 1st, 2020)
+- Add **Todo**
+- Mark **Todo** as done
 - Reopen a **Todo**
-- Add deadline
-- Add reminder
+- Add **Todo** deadline
+- Add **Todo** reminder
 

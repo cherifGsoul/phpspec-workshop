@@ -1,5 +1,5 @@
 {
-    "name": "cherif/todolist",
+    "name": "cherif/todo",
     "authors": [
         {
             "name": "Cherif BOUCHELAGHEM",
@@ -7,15 +7,15 @@
         }
     ],
     "require": {},
+    "require-dev": {
+        "phpspec/phpspec": "^6.1"
+    },
     "autoload": {
         "psr-4": {
-            "Cherif\\Todolist\\": "src/"
+            "Cherif\\Todo\\": "src/"
         }
     },
     "config": {
         "bin-dir": "bin"
-    },
-    "require-dev": {
-        "phpspec/phpspec": "^6.1"
     }
 }
