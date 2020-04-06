@@ -3,8 +3,6 @@
 namespace Cherif\Todo\Entity;
 
 use DateTimeImmutable;
-use DateTimeInterface;
-use DateTimeZone;
 use DomainException;
 
 class Todo
