@@ -36,8 +36,11 @@ The application of the workshop is a todo-list with the following rules:
 - **Todo** can only be reopened by its owner
 - **Todo** can only be reopened if it is maked as done
 - **Todo** can have a deadline
-- **Todo** can have a reminder
 - **Todo** dedaline can only be added by the todo owner
+- **Todo** dedaline must be in the future
+- **Todo** can have a reminder
+- **Todo** can have a reminder only if it has a deadline
+- **Todo** reminder must be in the future
 - **Todo** reminder can only be added by the todo owner 
 
 Based on those rules the following use cases had been identified:
