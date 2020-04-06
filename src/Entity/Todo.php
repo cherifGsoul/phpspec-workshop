@@ -139,7 +139,7 @@ class Todo
         if ($reminder <= new DateTimeImmutable()) {
             throw new DomainException('Todo reminder must be in the futur!');
         }
-        //var_dump($this->hasDeadline);
+        
         if (!$this->hasDeadline()) {
             throw new DomainException('Todo with deadline only can have a reminder!');
         }
