@@ -50,3 +50,6 @@ Based on those rules the following use cases had been identified:
 - Add **Todo** deadline
 - Add **Todo** reminder
 
+### WORKSHOP VIDEOS
+* [PART01](https://bit.ly/2UHkFN0)
+* [PART02](https://bit.ly/3aJQk65)
