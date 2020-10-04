@@ -70,9 +70,8 @@ class TodoSpec extends ObjectBehavior
 
     function it_adds_a_deadline()
     {
-        $todayTimestamp = strtotime(date('d/m/Y'));
-        $deadline = date("d/m/Y", strtotime("+1 month", $todayTimestamp));
-        $date = DateTimeImmutable::createFromFormat('d/m/Y', $deadline, new DateTimeZone('Africa/Algiers'));
+        $deadlineStr = date("d/m/Y", strtotime("+1 month"));
+        $date = DateTimeImmutable::createFromFormat('d/m/Y', $deadlineStr, new DateTimeZone('Africa/Algiers'));
         $this->addDeadline($date, 'cherif');
         $this->shouldHaveDeadline();
     }
